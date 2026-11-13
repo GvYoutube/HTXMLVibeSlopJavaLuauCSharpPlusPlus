@@ -34,17 +34,17 @@
   function parseProgram(text) {
     const withoutDoctype = text.replace(/<!doctype\s+htxmlvsjlcspp\s*>/i, '');
     if (/<!doctype/i.test(withoutDoctype)) {
-      fail('Only <!doctype htxmlvsjlcspp> is allowed. The compiler is picky today.');
+      fail('Either <!doctype htxmlvsjlcspp> is missing, or you are using the wrong doctype.');
     }
 
     const doc = new DOMParser().parseFromString(withoutDoctype, 'application/xml');
     const parseError = doc.querySelector('parsererror');
     if (parseError) {
-      fail('Could not parse the tags. Check your angle brackets and closing tags.');
+      fail('Could not parse the tags.');
     }
 
     if (!doc.documentElement || doc.documentElement.tagName !== 'slop') {
-      fail('Wrap the program in one <slop>...</slop> root tag.');
+      fail('You did not include a <slop> entry and </slop> closing tag.');
     }
 
     return doc.documentElement;
@@ -109,14 +109,14 @@
 
     function execute(nodes, scope, depth) {
       if (depth > 20) {
-        fail('VIBE ERROR: function nesting is too deep. Take a little walk.');
+        fail('ERROR: function nesting is too deep.');
       }
 
       for (const node of nodes) {
         steps += 1;
 
         if (steps > 2000) {
-          fail('VIBE ERROR: too many statements. The rice cooker needs a break.');
+          fail('ERROR: too many statements.');
         }
 
         const attrs = node.attributes;
@@ -156,7 +156,7 @@
             const fn = functions.get(name);
 
             if (!fn) {
-              fail('No function named "' + name + '". It may have wandered off.');
+              fail('No function named "' + name + '".');
             }
 
             const argsRaw = get('args', '');
@@ -215,7 +215,7 @@
     if (lines.length === 0) {
       const empty = document.createElement('span');
       empty.className = 'placeholder';
-      empty.textContent = 'Program ran successfully. It had nothing to say.';
+      empty.textContent = 'Program ran successfully, but nothing was outputted.';
       output.appendChild(empty);
       return;
     }
@@ -233,8 +233,8 @@
       message.className = 'error';
       message.textContent =
         error instanceof Error
-          ? 'VIBE ERROR: ' + error.message
-          : 'VIBE ERROR: something vague went wrong.';
+          ? '(real error) ERROR: ' + error.message
+          : '(real error) ERROR: Something went wrong in the playground.js file, but it is unknown what happened...';
 
       output.appendChild(message);
     }
