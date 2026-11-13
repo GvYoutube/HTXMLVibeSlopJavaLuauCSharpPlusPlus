@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#101114">
   <meta name="description" content="Meet HTXMLVibeSlopJavaLuauC#++, the programming language with more syntax than sense.">
   <title>HTXMLVibeSlopJavaLuauC#++ — probably a language</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="stylesheet" href="site.css">
   <script src="playground.js" defer></script>
 </head>
@@ -23,6 +24,7 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
+        <h2>(This is a fake coding language, and is intentionally vibecoded!)</h2>
         <p class="eyebrow"><span class="dot"></span> NOW WITH 100% MORE ANGLE BRACKETS</p>
         <h1>Code like<br>nobody <em>agreed</em><br>on the syntax.</h1>
         <p class="intro">Meet HTXMLVibeSlopJavaLuauC#++: a programming language assembled from committee meetings, questionable punctuation, and vibes.</p>
@@ -158,5 +160,88 @@
     <span>Made of tags, questionable choices, and enthusiasm.</span>
     <a href="https://github.com/GvYoutube/HTXMLVibeSlopJavaLuauCSharpPlusPlus">Source on GitHub ↗</a>
   </footer>
+
+  <dialog class="example-warning" id="example-warning" aria-labelledby="example-warning-title" aria-describedby="example-warning-copy">
+    <div class="warning-icon" aria-hidden="true">!</div>
+    <p class="eyebrow">Oi oi!</p>
+    <h2 id="example-warning-title">Head's up!</h2>
+    <p id="example-warning-copy">Because HXVSJLC#++ isn't an actual language... yet(?), your browser will automatically download the example instead. We're currently <s>working</s> vibecoding a compiler/intepreter for it, so the file is useless right now.</p>
+    <div class="warning-actions">
+      <button class="warning-cancel" id="example-cancel" type="button">Never mind</button>
+      <button class="warning-continue" id="example-continue" type="button">Open the example ↗</button>
+    </div>
+  </dialog>
+
+  <style>
+    .example-warning {
+      width: min(440px, calc(100% - 32px));
+      padding: 30px;
+      border: 1px solid #47484f;
+      border-radius: 10px;
+      background: #17181d;
+      color: #f1f0eb;
+      box-shadow: 0 24px 90px #000b;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .example-warning::backdrop { background: #08090bd9; backdrop-filter: blur(5px); }
+    .warning-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      margin-bottom: 20px;
+      border: 1px solid #ff8ac6;
+      border-radius: 50%;
+      color: #ff8ac6;
+      font: 700 20px 'DM Mono', monospace;
+    }
+    .example-warning .eyebrow { margin: 0 0 12px; }
+    .example-warning h2 { margin: 0 0 12px; font: 600 23px/1.2 'Space Grotesk', sans-serif; }
+    .example-warning p:not(.eyebrow) { color: #b1b0b8; font-size: 14px; line-height: 1.7; }
+    .example-warning code { color: #ff8ac6; }
+    .warning-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+    .warning-actions button {
+      border: 1px solid #ffffff30;
+      border-radius: 5px;
+      padding: 11px 14px;
+      background: transparent;
+      color: #f1f0eb;
+      font: 600 12px 'DM Sans', sans-serif;
+      cursor: pointer;
+    }
+    .warning-actions button:focus-visible { outline: 2px solid #d4fc58; outline-offset: 3px; }
+    .warning-actions .warning-continue { border-color: #d4fc58; background: #d4fc58; color: #11130c; }
+    @media (max-width: 430px) {
+      .example-warning { padding: 22px; }
+      .warning-actions { flex-direction: column-reverse; }
+    }
+  </style>
+  <script>
+    (() => {
+      const dialog = document.getElementById('example-warning');
+      const continueButton = document.getElementById('example-continue');
+      const cancelButton = document.getElementById('example-cancel');
+      let pendingHref = null;
+
+      document.querySelectorAll('a[href="examples/website.hxvsjlcspp"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (typeof dialog.showModal !== 'function') return;
+          event.preventDefault();
+          pendingHref = link.href;
+          dialog.showModal();
+        });
+      });
+
+      continueButton.addEventListener('click', () => {
+        const destination = pendingHref;
+        pendingHref = null;
+        dialog.close();
+        if (destination) window.location.assign(destination);
+      });
+
+      cancelButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => { pendingHref = null; });
+    })();
+  </script>
 </body>
 </html>
