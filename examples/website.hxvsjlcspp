@@ -1,0 +1,94 @@
+<!doctype htxmlvsjlcspp>
+<slop>
+  <!-- A long-ish program full of tags, calls, and cheerful architectural mistakes. -->
+  <local name="company" type="String" value="Definitely Real Software LLC" />
+  <local name="visitor" type="String" value="new human" />
+  <local name="status" type="String" value="optimistic" />
+  <local name="coffee" type="Integer" value="4" />
+  <local name="buildNumber" type="Integer" value="27" />
+  <local name="isTuesday" type="Boolean" value="false" />
+
+  <fn name="header" params="brand">
+    <say>========================================</say>
+    <say>WELCOME TO {brand}</say>
+    <say>We are legally a software company.</say>
+    <say>========================================</say>
+  </fn>
+
+  <fn name="welcome" params="person">
+    <say>Hello, {person}. Please accept our cookies.</say>
+    <if test="status == optimistic">
+      <say>Current status: optimistic. This is not a warranty.</say>
+    </if>
+    <say>Our support queue is currently {coffee} coffees deep.</say>
+  </fn>
+
+  <fn name="feature" params="featureName">
+    <say>Feature request received: {featureName}</say>
+    <say>We have added it to the roadmap-shaped drawer.</say>
+  </fn>
+
+  <fn name="deploy" params="build">
+    <say>Starting deployment pipeline for build {build}...</say>
+    <repeat times="3">
+      <say>Checking vibes: pass {i}</say>
+    </repeat>
+    <if test="build >= 1">
+      <say>Build {build} deployed to a computer somewhere.</say>
+    </if>
+  </fn>
+
+  <fn name="supportTicket" params="person">
+    <say>Ticket opened for {person}.</say>
+    <say>Priority: emotionally urgent.</say>
+    <repeat times="2">
+      <say>We appreciate your patience. (message {i})</say>
+    </repeat>
+  </fn>
+
+  <call name="header" args="company" />
+  <call name="welcome" args="visitor" />
+
+  <say></say>
+  <say>--- THE EXECUTIVE SUMMARY ---</say>
+  <say>We make solutions for problems invented during meetings.</say>
+  <say>Our core product is a collection of tags wearing a trench coat.</say>
+
+  <if test="isTuesday == false">
+    <say>It is not Tuesday, so true and false have their usual meanings.</say>
+  </if>
+  <if test="coffee > 2">
+    <say>There is enough coffee to pretend the build is intentional.</say>
+  </if>
+
+  <say></say>
+  <say>--- A REASONABLE FEATURE REQUEST ---</say>
+  <call name="feature" args="dark mode" />
+  <call name="feature" args="keyboard shortcuts" />
+  <call name="feature" args="an undo button for meetings" />
+
+  <say></say>
+  <say>--- BUILD LOG ---</say>
+  <call name="deploy" args="buildNumber" />
+
+  <say></say>
+  <say>--- SUPPORT EXPERIENCE ---</say>
+  <call name="supportTicket" args="visitor" />
+
+  <say></say>
+  <say>--- GENERIC LOOP OF ASSURANCE ---</say>
+  <repeat times="4">
+    <say>Everything is under control, statement {i}.</say>
+  </repeat>
+
+  <fn name="legalDisclaimer" params="brand">
+    <say>{brand} is not responsible for lost semicolons.</say>
+    <say>No actual AI-powered rice cookers were harmed.</say>
+    <say>All promises are vibes-based and non-binding.</say>
+  </fn>
+
+  <say></say>
+  <say>--- FINE PRINT ---</say>
+  <call name="legalDisclaimer" args="company" />
+  <say>Have a statistically improbable day!</say>
+</slop>
