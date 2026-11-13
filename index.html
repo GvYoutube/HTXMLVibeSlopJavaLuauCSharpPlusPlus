@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Meet HTXMLVibeSlopJavaLuauC#++, the programming language with more syntax than sense.">
+  <title>HTXMLVibeSlopJavaLuauC#++ — probably a language</title>
+  <link rel="stylesheet" href="site.css">
+  <script src="playground.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top">HX<span>VS</span></a>
+    <nav>
+      <a href="#language">The language</a>
+      <a href="#playground">Playground</a>
+      <a href="examples/website.hxvsjlcspp">Long example</a>
+      <a class="github" href="https://github.com/GvYoutube/HTXMLVibeSlopJavaLuauCSharpPlusPlus">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> NOW WITH 100% MORE ANGLE BRACKETS</p>
+        <h1>Code like<br>nobody <em>agreed</em><br>on the syntax.</h1>
+        <p class="intro">Meet HTXMLVibeSlopJavaLuauC#++: a programming language assembled from committee meetings, questionable punctuation, and vibes.</p>
+
+        <div class="actions">
+          <a class="button primary" href="#playground">Try the playground <span>↓</span></a>
+          <a class="button secondary" href="examples/website.hxvsjlcspp">Read the long example ↗</a>
+        </div>
+
+        <p class="file-note">doctype: <code>htxmlvsjlcspp</code> &nbsp;·&nbsp; extension: <code>.hxvsjlcspp</code></p>
+      </div>
+
+      <div class="hero-card">
+        <div class="window-bar">
+          <i></i><i></i><i></i>
+          <span>probably-a-program.hxvsjlcspp</span>
+        </div>
+
+        <pre><code><b>&lt;!doctype</b> htxmlvsjlcspp&gt;
+&lt;slop&gt;
+  &lt;local name=<u>"mood"</u>
+    type=<u>"String"</u>
+    value=<u>"optimistic"</u> /&gt;
+
+  &lt;fn name=<u>"compile"</u>&gt;
+    &lt;if test=<u>"mood == optimistic"</u>&gt;
+      &lt;say&gt;It works!&lt;/say&gt;
+    &lt;/if&gt;
+  &lt;/fn&gt;
+
+  &lt;call name=<u>"compile"</u> /&gt;
+&lt;/slop&gt;</code></pre>
+
+        <div class="stamp">COMPILES<br>ON MY<br>MACHINE*</div>
+      </div>
+
+      <div class="hero-foot">
+        <span>★ 0 guarantees</span>
+        <span>* probably</span>
+        <span>100% syntactically suspicious</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Language ingredients">
+      <div>
+        HTML ENERGY <b>✳</b> XML STRUCTURE <b>✳</b> JAVA-ISH SERIOUSNESS <b>✳</b>
+        LUAU-ISH LOCALS <b>✳</b> C#-ISH CONFIDENCE <b>✳</b> C++-ISH PUNCTUATION <b>✳</b>
+        QUESTIONABLE VIBES <b>✳</b>
+      </div>
+    </section>
+
+    <section class="section language" id="language">
+      <div class="section-heading">
+        <p class="eyebrow">A SPECIFICATION, SORT OF</p>
+        <h2>Familiar ingredients.<br><em>Unfamiliar consequences.</em></h2>
+      </div>
+
+      <div class="rule-grid">
+        <article>
+          <span class="number">01</span>
+          <h3>Everything is a tag</h3>
+          <p>Declarations, output, loops, and function calls all wear angle brackets. It’s markup! It’s code! It’s a syntax error waiting to happen!</p>
+        </article>
+
+        <article>
+          <span class="number">02</span>
+          <h3>Functions eat functions</h3>
+          <p>Put tags in functions, calls in tags, and conditionals wherever the vibes feel right. The playground supports a small, well-behaved subset.</p>
+        </article>
+
+        <article>
+          <span class="number">03</span>
+          <h3>Types are decorative</h3>
+          <p>Write <code>type="String"</code> for the comforting illusion of safety. Values are strings. The compiler is a rice cooker.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="play-section" id="playground">
+      <div class="play-title">
+        <div>
+          <p class="eyebrow">THE EXTREMELY SMALL RUNTIME</p>
+          <h2>Test the <em>vibes.</em></h2>
+        </div>
+        <p>Edit the code, then run it. Your browser executes only the tiny tag-based subset—not arbitrary JavaScript. Probably the safest part of this whole language.</p>
+      </div>
+
+      <div class="playground">
+        <div class="editor">
+          <div class="panel-head">
+            <span><i class="live-dot"></i> playground.hxvsjlcspp</span>
+            <button id="reset" class="text-button" type="button">Reset example ↺</button>
+          </div>
+
+          <label class="sr-only" for="source">HTXMLVibeSlopJavaLuauC#++ source code</label>
+          <textarea id="source" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editor-hint"></textarea>
+
+          <div class="editor-foot" id="editor-hint">
+            <span>XML-ish tags · strings · vibes</span>
+            <button id="run" class="run-button" type="button">Run the vibes <span>▶</span></button>
+          </div>
+        </div>
+
+        <div class="output-panel">
+          <div class="panel-head">
+            <span>OUTPUT <span class="muted">/ compiler mood: hopeful</span></span>
+            <button id="clear" class="text-button" type="button">Clear</button>
+          </div>
+
+          <div id="output" class="output" role="status" aria-live="polite">
+            <span class="placeholder">The void awaits your program.</span>
+          </div>
+
+          <div class="output-foot">VIBE ERRORs are emotionally valid.</div>
+        </div>
+      </div>
+
+      <p class="play-note">
+        Supported: <code>&lt;local&gt;</code>, <code>&lt;fn&gt;</code>, <code>&lt;call&gt;</code>, <code>&lt;say&gt;</code>, <code>&lt;if&gt;</code>, <code>&lt;repeat&gt;</code>. No network access, no eval, no actual Java or C++.
+      </p>
+    </section>
+
+    <section class="manifesto">
+      <div class="manifesto-mark">“</div>
+      <blockquote>It compiles on my machine,<br><em>probably.</em></blockquote>
+      <p>— the official motto, after extensive debate</p>
+      <a href="examples/website.hxvsjlcspp">Witness the long example ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="#top">HX<span>VS</span></a>
+    <span>Made of tags, questionable choices, and enthusiasm.</span>
+    <a href="https://github.com/GvYoutube/HTXMLVibeSlopJavaLuauCSharpPlusPlus">Source on GitHub ↗</a>
+  </footer>
+</body>
+</html>
